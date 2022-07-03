@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148907305.jpg?t=st=1656603641~exp=1656604241~hmac=6c8822b7e5c761e78f5fe5e050994745da08c291c2136f82e80b7648801d6b00&w=1480") fixed center center no-repeat;
+    background-size: cover;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,40 @@
+.container {
+    display: grid;
+    grid-template-columns: 115px 70px 21px;
+    grid-template-rows: auto;
+}
+
+.priority {
+    font-size: 25px;
+}
+
+.priority_high {
+    color: #B22222;
+}
+
+.priority_middle {
+    color: #FFA500;
+}
+
+.priority_low {
+    color: #006400;
+}
+
+.text {
+    margin-right: 10px;
+    color: #001d18;
+    font-weight: 500;
+}
+
+.button {
+    padding: 0;
+    height: 21px;
+    width: 21px;
+    color: #001d18;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #001d18;
+}
+
+.button:hover {
+    opacity: 0.5;
+}

@@ -1,0 +1,25 @@
+.button_all {
+    background-color: #FFFFFF;
+}
+
+.button_high {
+    background-color: #B22222;
+}
+
+.button_middle {
+    background-color: #FFA500;
+}
+
+.button_low {
+    background-color: #006400
+}
+
+.button {
+    color: #001d18;
+    border: none;
+    min-width: 52px;
+}
+
+.button:hover {
+    opacity: 0.5;
+}
