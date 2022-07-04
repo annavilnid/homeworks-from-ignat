@@ -2,17 +2,17 @@ import React, {useState} from 'react'
 import Affairs from './Affairs'
 
 // types
-export type AffairPriorityType = Array<AffairType>
+export type AffairPriorityType = 'high' | 'middle' | 'low'
 export type AffairType = {
   _id: number,
   name: string,
-  priority: string
+  priority: AffairPriorityType
 }
 
-export type FilterType = 'all' | 'high' | 'middle' | 'low' | AffairPriorityType
+export type FilterType = 'all' | AffairPriorityType
 
 // constants
-const defaultAffairs: AffairPriorityType = [
+const defaultAffairs: Array<AffairType> = [
   {_id: 1, name: 'React', priority: 'high'},
   {_id: 2, name: 'anime', priority: 'low'},
   {_id: 3, name: 'games', priority: 'low'},
@@ -25,7 +25,6 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): A
   if (filter === 'all') return affairs;
   else return affairs.filter((affair: AffairType) => affair.priority === filter);
 }
-
 
 export const deleteAffair = (affairs: Array<AffairType>, _id: number): AffairType[] => {
   return affairs.filter((affair: AffairType) => affair._id !== _id);

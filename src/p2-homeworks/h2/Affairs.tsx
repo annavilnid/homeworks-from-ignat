@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {MouseEventHandler} from 'react'
 import Affair from './Affair'
 import {AffairType, FilterType} from './HW2'
 import styles from './Affairs.module.css';
@@ -18,17 +18,8 @@ function Affairs(props: AffairsPropsType) {
     />
   ))
 
-  const setAll = () => {
-    props.setFilter("all")
-  } // need to fix
-  const setHigh = () => {
-    props.setFilter("high")
-  }
-  const setMiddle = () => {
-    props.setFilter("middle")
-  }
-  const setLow = () => {
-    props.setFilter("low")
+  const set = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    props.setFilter(e.currentTarget.value as FilterType)
   }
 
   return (
@@ -36,10 +27,10 @@ function Affairs(props: AffairsPropsType) {
 
       {mappedAffairs}
 
-      <button className={`${styles.button} ${styles.button_all}`} onClick={setAll}>All</button>
-      <button className={`${styles.button} ${styles.button_high}`} onClick={setHigh}>High</button>
-      <button className={`${styles.button} ${styles.button_middle}`} onClick={setMiddle}>Middle</button>
-      <button className={`${styles.button} ${styles.button_low}`} onClick={setLow}>Low</button>
+      <button className={`${styles.button} ${styles.button_all}`} onClick={set} value={'all'}>All</button>
+      <button className={`${styles.button} ${styles.button_high}`} onClick={set} value={'high'}>High</button>
+      <button className={`${styles.button} ${styles.button_middle}`} onClick={set} value={'middle'}>Middle</button>
+      <button className={`${styles.button} ${styles.button_low}`} onClick={set} value={'low'}>Low</button>
     </div>
   )
 
