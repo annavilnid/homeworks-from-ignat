@@ -1,12 +1,26 @@
 .superInput {
-
+    background: rgba(0, 0, 0, 0);
+    border: 3px solid white;
+    outline: none;
+    border-radius: 7px;
+    box-shadow: 3px -3px 15px #1beabd,
+    -3px 3px 15px #10abff;
 }
 
 .errorInput {
-    border: 3px solid lime;
-    background: red;
+    box-shadow: 3px -3px 15px #e47c7c,
+    -3px 3px 15px #ffc4b2;
+    background-color: #ffc4b2;
 }
 
 .error {
-    color: red;
+    color: #B22222;
 }
+
+.container {
+    max-width: 149px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+

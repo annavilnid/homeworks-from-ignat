@@ -1,0 +1,51 @@
+.sidebar {
+    background-image: linear-gradient(45deg , #1beabd 90%, #10abff);
+    display: block;
+    width: 300px;
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -webkit-transform: translateX(-90%);
+    -moz-transform: translateX(-90%);
+    -ms-transform: translateX(-90%);
+    -o-transform: translateX(-90%);
+    transform: translateX(-90%);
+}
+
+.sidebar:hover {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    background-image: none;
+}
+
+.nav {
+    text-decoration: none;
+    font-weight: bold;
+    background: linear-gradient(135deg, #12BCB0 20%, #FABE0E 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    padding: 0.3em 0.3em ;
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg, #12BCB0 20%, #FABE0E 70%);
+    border-image-slice: 1;
+}
+
+.active {
+    text-decoration: none;
+    font-weight: bold;
+    background: linear-gradient(135deg, #e47c7c 20%, #FABE0E 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    padding: 0.3em 0.3em ;
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg, #e47c7c 20%, #FABE0E 70%);
+    border-image-slice: 1;
+}

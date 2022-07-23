@@ -1,7 +1,23 @@
-.someClass {
-
+.container {
+    display: flex;
+    flex-direction: row;
 }
 
-.error {
+.errorInput {
+    outline: none;
     border: 1px solid red;
+}
+
+.button {
+    max-height: 24px;
+    border: none;
+    margin: 0 10px;
+    border-radius: 8px;
+    background-image: linear-gradient(45deg , #1beabd 40%, #10abff);
+    color: white;
+}
+
+.button:disabled {
+    color: black;
+    opacity: 0.2;
 }

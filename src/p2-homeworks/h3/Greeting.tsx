@@ -1,28 +1,44 @@
-import React from 'react'
-import s from './Greeting.module.css'
+import React, {ChangeEvent, KeyboardEvent} from 'react'
+import s from './../h4/common/c1-SuperInputText/SuperInputText.module.css'
+import SuperInputText from "../h4/common/c1-SuperInputText/SuperInputText";
+import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
+import style from './Greeting.module.css'
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
+  name: string // need to fix any
+  setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void // need to fix any
+  addUser: () => void // need to fix any
+  onEnter: (e: KeyboardEvent<HTMLInputElement>) => void
+  error: string // need to fix any
+  totalUsers: number // need to fix any
 }
 
 // презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, error, totalUsers} // деструктуризация пропсов
+  {name, setNameCallback, addUser, onEnter, error, totalUsers} // деструктуризация пропсов
 ) => {
-    const inputClass = s.error // need to fix with (?:)
-
-    return (
-        <div>
-            <input value={name} onChange={setNameCallback} className={inputClass}/>
-            <span>{error}</span>
-            <button onClick={addUser}>add</button>
-            <span>{totalUsers}</span>
-        </div>
-    )
+  const inputClass = error ? s.errorInput : s.input// need to fix with (?:)
+  console.log(name)
+  return (
+    <div className={style.container}>
+      <SuperInputText value={name}
+                      error={error}
+                      type={'text'}
+                      onChange={setNameCallback}
+                      onKeyPress={onEnter}
+                      className={s.someClass}
+        //className={finalInputClassName}
+                      spanClassName={s.testSpanError}
+      />
+      <SuperButton disabled={name ? false : true}
+                   onClick={addUser}
+                   className={style.button}
+      >
+        add
+      </SuperButton>
+      <span>{totalUsers}</span>
+    </div>
+  )
 }
 
 export default Greeting

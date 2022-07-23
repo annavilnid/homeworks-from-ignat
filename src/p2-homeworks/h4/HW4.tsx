@@ -6,7 +6,7 @@ import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 
 function HW4() {
     const [text, setText] = useState<string>('')
-    const error = text ? '' : 'error'
+    const error = text.trim() ? '' : 'error' //*Не пропускает пысте значения
 
     const showAlert = () => {
         if (error) {
@@ -30,22 +30,24 @@ function HW4() {
                     onChangeText={setText}
                     onEnter={showAlert}
                     error={error}
-                    // spanClassName={s.testSpanError}
+                    spanClassName={s.testSpanError}
                 />
 
                 <SuperInputText
-                    className={s.blue} // проверьте, рабоет ли смешивание классов
+                   className={s.blue} // проверьте, рабоет ли смешивание классов
                 />
 
                 {/*----------------------------------------------------*/}
 
-                <SuperButton>
+                <SuperButton
+                  onClick={showAlert}
+                >
                     default
                 </SuperButton>
 
                 <SuperButton
                     red // пропсу с булевым значением не обязательно указывать true
-                    onClick={showAlert}
+                    onClick={()=>setText('')}
                 >
                     delete {/*// название кнопки попадёт в children*/}
                 </SuperButton>

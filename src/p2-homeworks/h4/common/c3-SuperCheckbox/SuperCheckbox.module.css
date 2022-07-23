@@ -1,5 +1,41 @@
 .checkbox {
+    position: relative;
+    margin: 0 1rem 0 0;
+    cursor: pointer;
+}
 
+.checkbox:before {
+    content: "";
+    position: absolute;
+    top: -0.125rem;
+    left: 0;
+    z-index: 1;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #1beabd;
+    background: #fff
+}
+
+.checkbox:checked:before {
+    content: "\2714";
+    color: #1beabd;
+    font-size: 1.3em;
+    border: 2px solid #10abff;
+    z-index: 2;
+}
+.checkbox:after {
+    content: "";
+    position: absolute;
+    top: -0.125rem;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    background: #fff;
+}
+
+.checkbox:hover:after {
+    border: 2px solid #10abff;
+    z-index: 1;
 }
 
 .spanClassName {
